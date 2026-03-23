@@ -1,0 +1,42 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "outline" | "whatsapp";
+  class?: string;
+  target?: string;
+  rel?: string;
+  type?: "button" | "submit";
+}
+
+const {
+  href,
+  variant = "primary",
+  class: className = "",
+  target,
+  rel,
+  type,
+} = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 cursor-pointer";
+
+const variants = {
+  primary: "bg-olive-600 text-white hover:bg-olive-700 active:bg-olive-800",
+  outline:
+    "border-2 border-olive-600 text-olive-700 hover:bg-olive-50 active:bg-olive-100",
+  whatsapp: "bg-[#25D366] text-white hover:bg-[#1da851] active:bg-[#178a43]",
+};
+
+const classes = `${baseClasses} ${variants[variant]} ${className}`;
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  href={href}
+  class={classes}
+  target={target}
+  rel={rel}
+  type={!href ? type : undefined}
+>
+  <slot />
+</Tag>

@@ -1,0 +1,63 @@
+---
+import { clinic } from "@data/clinic";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="sobre" class="bg-ivory-100 py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-4">
+    <SectionTitle
+      title="Sobre a Clínica"
+      subtitle="Conheça quem cuida do seu sorriso"
+    />
+
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="h-64 w-64 rounded-3xl bg-olive-100 p-8 sm:h-80 sm:w-80">
+            <img
+              src={`${base}images/logo.png`}
+              alt={`Logo ${clinic.name}`}
+              class="h-full w-full object-contain"
+              loading="lazy"
+            />
+          </div>
+          <div class="absolute -right-4 -bottom-4 h-64 w-64 rounded-3xl border-2 border-olive-200 sm:h-80 sm:w-80"></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="mb-4 font-heading text-2xl font-semibold text-olive-900">
+          {clinic.name}
+        </h3>
+        <p class="mb-4 leading-relaxed text-warm-600">
+          A <strong class="text-olive-800">{clinic.name}</strong> é uma clínica odontológica
+          localizada no coração de {clinic.address.city}/{clinic.address.state}, liderada pela
+          <strong class="text-olive-800">{clinic.doctor}</strong>.
+        </p>
+        <p class="mb-4 leading-relaxed text-warm-600">
+          Nosso compromisso é oferecer tratamentos de qualidade em um ambiente acolhedor,
+          utilizando técnicas modernas e equipamentos de última geração para garantir
+          o melhor resultado para cada paciente.
+        </p>
+        <p class="leading-relaxed text-warm-600">
+          Acreditamos que um sorriso bonito e saudável transforma vidas. Por isso,
+          cada atendimento é personalizado, com atenção aos detalhes e respeito
+          às necessidades individuais de cada pessoa.
+        </p>
+
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white p-4 text-center shadow-sm">
+            <p class="font-heading text-2xl font-bold text-olive-700">+500</p>
+            <p class="text-sm text-warm-500">Sorrisos transformados</p>
+          </div>
+          <div class="rounded-xl bg-white p-4 text-center shadow-sm">
+            <p class="font-heading text-2xl font-bold text-olive-700">5+</p>
+            <p class="text-sm text-warm-500">Anos de experiência</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

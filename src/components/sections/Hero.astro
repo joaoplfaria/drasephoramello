@@ -1,0 +1,86 @@
+---
+import { clinic } from "@data/clinic";
+import Button from "@components/ui/Button.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section
+  id="inicio"
+  class="relative flex min-h-[90vh] items-center overflow-hidden bg-gradient-to-br from-olive-50 via-ivory-50 to-olive-100 pt-20"
+>
+  <div
+    class="absolute inset-0 opacity-[0.03]"
+    style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 40px 40px;"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-4 py-12 md:py-20">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div class="order-2 flex justify-center md:order-1">
+        <div class="relative">
+          <div class="flex h-56 w-56 items-center justify-center rounded-full bg-white/80 p-6 shadow-lg ring-1 ring-olive-100 sm:h-72 sm:w-72 sm:p-8">
+            <img
+              src={`${base}images/logo.png`}
+              alt={`Logo ${clinic.name}`}
+              class="h-full w-full object-contain drop-shadow-sm"
+              width="280"
+              height="280"
+            />
+          </div>
+          <div class="absolute -top-2 -right-2 rounded-full bg-olive-500 px-3 py-1 text-xs font-semibold text-white shadow-md">
+            Ortho
+          </div>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full border border-olive-200 bg-white px-4 py-1.5 text-xs font-medium text-olive-700 shadow-sm">
+            {clinic.address.city}/{clinic.address.state}
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 text-center md:order-2 md:text-left">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-olive-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-olive-700 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5l1.5 10.5c.2.9 1 1.5 1.8 1.5h1.4c.9 0 1.6-.6 1.8-1.5L16 13c1.2-1.2 2-3 2-5 0-3.5-2.5-6-6-6z" />
+          </svg>
+          {clinic.doctor}
+        </div>
+
+        <h1 class="mb-4 font-heading text-4xl font-bold leading-tight text-olive-950 sm:text-5xl lg:text-6xl">
+          {clinic.name}
+        </h1>
+
+        <p class="mx-auto mb-8 max-w-md text-lg leading-relaxed text-warm-600 md:mx-0">
+          {clinic.tagline}. Cuidamos do seu sorriso com dedicação, tecnologia e carinho.
+        </p>
+
+        <div class="flex flex-col items-center gap-3 sm:flex-row md:justify-start">
+          <Button href="#agendar" variant="primary" class="w-full sm:w-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.462-1.494A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.583l-.376-.228-2.653.888.887-2.646-.236-.381A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+            Agendar Consulta
+          </Button>
+          <Button href="#servicos" variant="outline" class="w-full sm:w-auto">
+            Conheça Nossos Serviços
+          </Button>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-6 text-sm text-warm-500 md:justify-start">
+          <div class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 text-olive-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+            </svg>
+            Seg-Sex 09h-18h
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 text-olive-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
+            </svg>
+            {clinic.address.neighborhood}, {clinic.address.city}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

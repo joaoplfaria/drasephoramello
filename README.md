@@ -1,6 +1,6 @@
-# Dra. Sephora Mello - Site Institucional
+# Sorria Mais Ortho - Site Institucional
 
-Site institucional da clínica odontológica da Dra. Sephora Mello.
+Site institucional da clínica odontológica **Sorria Mais Ortho**, da **Dra. Sephora Mello**, localizada em Palhoça/SC.
 
 ## Tech Stack
 
@@ -30,24 +30,22 @@ npm run preview
 ```
 src/
 ├── components/
-│   ├── ui/          # Componentes genéricos (Button, Card, etc.)
-│   ├── layout/      # Header, Footer, Navigation
-│   └── sections/    # Seções de página (Hero, About, Services)
-├── layouts/         # Layouts base do Astro
-├── pages/           # Páginas (roteamento baseado em arquivos)
-├── styles/          # CSS global e variáveis de tema
-├── data/            # Dados estáticos (tratamentos, FAQ, etc.)
+│   ├── ui/          # Componentes genéricos (Button, SectionTitle, ServiceCard)
+│   ├── layout/      # Header, Footer
+│   └── sections/    # Hero, About, Services, Schedule, Location
+├── layouts/         # Layout base do Astro
+├── pages/           # Página principal (single-page)
+├── styles/          # CSS global e tema de cores
+├── data/            # Dados centralizados da clínica
 └── lib/             # Utilitários e helpers
 public/
-├── images/          # Imagens estáticas (hero, treatments, team)
+├── images/          # Logo e imagens estáticas
 └── fonts/           # Fontes customizadas
 ```
 
 ## Deploy
 
 O deploy é automático via GitHub Actions a cada push na branch `main`.
-
-O site fica disponível em: https://joaoplfaria.github.io/drasephoramello
 
 ## Licença
 

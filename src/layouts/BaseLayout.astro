@@ -1,15 +1,19 @@
 ---
+import "@styles/global.css";
+import { clinic } from "@data/clinic";
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "Dra. Sephora Mello | Odontologia",
-  description = "Clínica odontológica da Dra. Sephora Mello. Tratamentos modernos com atendimento humanizado para o seu melhor sorriso.",
+  title = `${clinic.name} | ${clinic.doctor} - Odontologia`,
+  description = `${clinic.name} - Clínica odontológica da ${clinic.doctor} em ${clinic.address.city}/${clinic.address.state}. Tratamentos modernos com atendimento humanizado para o seu melhor sorriso.`,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -24,9 +28,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={new URL(`${base}images/logo.png`, Astro.site)} />
 
     <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" type="image/svg+xml" href="/drasephoramello/favicon.svg" />
+    <link rel="icon" type="image/png" href={`${base}images/logo.png`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +42,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-neutral-50 font-sans text-neutral-800 antialiased">
+  <body class="min-h-screen bg-ivory-50 font-sans text-warm-800 antialiased">
     <slot />
   </body>
 </html>
