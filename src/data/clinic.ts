@@ -13,6 +13,10 @@ export const clinic = {
     url: "https://wa.me/554888021472",
     number: "554888021472",
   },
+  instagram: {
+    url: "https://www.instagram.com/drasephoramello/",
+    handle: "@drasephoramello",
+  },
   address: {
     street: "Servidão Augusto Haeming",
     neighborhood: "Centro",
