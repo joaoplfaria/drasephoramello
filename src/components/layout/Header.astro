@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Agendar", href: "#agendar" },
   { label: "Localização", href: "#localizacao" },
 ];
 ---
@@ -41,9 +40,7 @@ const navLinks = [
         ))
       }
       <a
-        href={clinic.whatsapp.url}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#agendar"
         class="rounded-full bg-olive-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-olive-700"
       >
         Agendar Consulta
@@ -79,10 +76,8 @@ const navLinks = [
         ))
       }
       <a
-        href={clinic.whatsapp.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-4 rounded-full bg-olive-600 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-olive-700"
+        href="#agendar"
+        class="mobile-nav-link mt-4 rounded-full bg-olive-600 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-olive-700"
       >
         Agendar Consulta
       </a>
